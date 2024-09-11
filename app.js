@@ -168,9 +168,26 @@ app.post('/webhook', async (req, res) => {
 							productId: `${catalogId}`,
 						};
 					}
-
 					break;
 				}
+				case 'poll':
+					body = {
+						type: 'poll',
+						message: 'Poll Message',
+						options: ['1', '2', '3'],
+						only_one: true // Optional
+					};
+					break;
+				case 'sticker':
+					body = {
+						type: 'sticker',
+						message: 'https://cdnydm.com/wh/aERKsVRyYAO9enBQrRwjlA.webp?size=512x512',
+						options: {
+							width: 500,
+							height: 500
+						}
+					};
+					break;
 				default:
 					body = { message: 'Echo - ' + text, type: 'text' };
 			}
