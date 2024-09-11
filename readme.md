@@ -39,3 +39,5 @@ You can test this bot with these preconfigured messages:
 - vcard
 - contact
 - product
+- poll
+- sticker
